@@ -10,8 +10,8 @@ export default [
   {
     path: "/countpage",
     exact: true,
-    render: (props) => {
-      return <CountPage {...props} />;
+    render: (props, count, setCount) => {
+      return <CountPage {...props} count={count} setCount={setCount} />;
     },
   },
 ];
