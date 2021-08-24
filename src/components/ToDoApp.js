@@ -23,7 +23,15 @@ function ToDoApp() {
     const deleteItems = todoList.filter((ele) => ele.id != item.id);
     setTodoList(deleteItems);
   };
-
+  const handelIsCompleted = (e, index) => {
+    const todoCompleted = todoList.filter((todo) => {
+      if (todo.id === index + 1) {
+        todo.isComplete = e.target.checked;
+      }
+      return todo;
+    });
+    setTodoList(todoCompleted);
+  };
   return (
     <div>
       <ToDoForm
@@ -31,7 +39,11 @@ function ToDoApp() {
         handelOnChange={handelOnChange}
         handelOnSubmit={handelOnSubmit}
       />
-      <ToDoList todoList={todoList} handelDeleteBtn={handelDeleteBtn} />
+      <ToDoList
+        todoList={todoList}
+        handelDeleteBtn={handelDeleteBtn}
+        handelIsCompleted={handelIsCompleted}
+      />
     </div>
   );
 }

@@ -5,9 +5,17 @@ function ToDoList(props) {
   return (
     <div>
       {props.todoList.length ? (
-        props.todoList.map((item) => {
+        props.todoList.map((item, index) => {
           return (
-            <div key={item.id}>
+            <div
+              key={item.id}
+              style={{
+                textDecoration: item.isComplete ? "line-through" : "none",
+              }}>
+              <input
+                type="checkbox"
+                onChange={(e) => props.handelIsCompleted(e, index)}
+              />
               {item.title}{" "}
               <button onClick={() => props.handelDeleteBtn(item)}>
                 Delete
