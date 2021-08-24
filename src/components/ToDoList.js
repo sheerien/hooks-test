@@ -17,7 +17,10 @@ function ToDoList(props) {
                 onChange={(e) => props.handelIsCompleted(e, index)}
               />
               {item.title}{" "}
-              <button onClick={() => props.handelDeleteBtn(item)}>
+              <button
+                onClick={
+                  item.isComplete ? () => props.handelDeleteBtn(item) : null
+                }>
                 Delete
               </button>
             </div>
