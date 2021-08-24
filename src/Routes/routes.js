@@ -1,5 +1,5 @@
-import CountPage from "../components/CountPage";
 import Home from "../components/Home";
+import ToDoApp from "../components/ToDoApp";
 
 export default [
   {
@@ -8,10 +8,10 @@ export default [
     component: Home,
   },
   {
-    path: "/countpage",
+    path: "/todoapp",
     exact: true,
     render: (props, count, setCount) => {
-      return <CountPage {...props} count={count} setCount={setCount} />;
+      return <ToDoApp {...props} count={count} setCount={setCount} />;
     },
   },
 ];

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import routes from "./Routes/routes";
 
@@ -9,7 +10,7 @@ function App() {
 
   return (
     <Router>
-      <NavBar />
+      <Header />
       <Switch>
         {/*<Route path="/" exact component={Home} />*/}
         {routes.map((route, key) => {

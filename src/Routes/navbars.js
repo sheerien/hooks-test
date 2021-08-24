@@ -4,7 +4,7 @@ export default [
     pageName: "Home",
   },
   {
-    pagePath: "/countpage",
-    pageName: "CountPage",
+    pagePath: "/todoapp",
+    pageName: "ToDoApp",
   },
 ];
